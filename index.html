@@ -6,6 +6,11 @@
     <title>JR Security & Cleaning Services | PSIRA-Registered | Loeriesfontein, Northern Cape & Western Cape</title>
     <meta name="description" content="PSIRA-registered security guarding, armed response, CCTV installation, cleaning services & toilet hire in Loeriesfontein, Northern Cape & Western Cape, South Africa. 24/7 professional protection. Call 087 822 2981.">
     <meta name="keywords" content="security company Loeriesfontein, security guards Northern Cape, PSIRA registered security South Africa, armed response Loeriesfontein, CCTV installation Northern Cape, cleaning services Loeriesfontein, JR Security, security company Hantam, security Carnarvon, security Calvinia, portable toilet hire Northern Cape">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me;">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://jrsecurity.co.za" />
@@ -13,7 +18,16 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://wa.me">
+    <link rel="preconnect" href="https://wa.me">
+
+    <!-- Async font loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e6fff">
 
     <!-- Open Graph -->
     <meta property="og:title" content="JR Security & Cleaning Services | Loeriesfontein, Northern Cape">
@@ -21,6 +35,8 @@
     <meta property="og:type" content="business.business">
     <meta property="og:url" content="https://jrsecurity.co.za">
     <meta property="og:image" content="https://jrsecurity.co.za/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="business:contact_data:locality" content="Loeriesfontein">
     <meta property="business:contact_data:region" content="Northern Cape">
     <meta property="business:contact_data:country_name" content="South Africa">
@@ -29,6 +45,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="JR Security & Cleaning | Loeriesfontein, Northern Cape">
     <meta name="twitter:description" content="PSIRA-registered security & cleaning services in Loeriesfontein and across South Africa.">
+    <meta name="twitter:image" content="https://jrsecurity.co.za/og-image.jpg">
 
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
@@ -41,6 +58,8 @@
       "url": "https://jrsecurity.co.za",
       "telephone": ["+27878222981", "+27781564244"],
       "email": "jr.retailenterprises@outlook.com",
+      "image": "https://jrsecurity.co.za/logo.png",
+      "priceRange": "ZAR 500 - ZAR 50000",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Loeriesfontein",
@@ -52,56 +71,29 @@
         "latitude": "-30.9333",
         "longitude": "19.4333"
       },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Loeriesfontein",
-          "containedInPlace": {"@type": "State", "name": "Northern Cape"}
-        },
-        {
-          "@type": "City",
-          "name": "Carnarvon",
-          "containedInPlace": {"@type": "State", "name": "Northern Cape"}
-        },
-        {
-          "@type": "City",
-          "name": "Calvinia",
-          "containedInPlace": {"@type": "State", "name": "Northern Cape"}
-        },
-        {
-          "@type": "City",
-          "name": "Kimberley",
-          "containedInPlace": {"@type": "State", "name": "Northern Cape"}
-        },
-        {
-          "@type": "City",
-          "name": "Upington",
-          "containedInPlace": {"@type": "State", "name": "Northern Cape"}
-        },
-        {
-          "@type": "City",
-          "name": "Springbok",
-          "containedInPlace": {"@type": "State", "name": "Northern Cape"}
-        },
-        {
-          "@type": "City",
-          "name": "Cape Town",
-          "containedInPlace": {"@type": "State", "name": "Western Cape"}
-        },
-        {
-          "@type": "City",
-          "name": "Stellenbosch",
-          "containedInPlace": {"@type": "State", "name": "Western Cape"}
-        },
-        {
-          "@type": "City",
-          "name": "George",
-          "containedInPlace": {"@type": "State", "name": "Western Cape"}
-        }
-      ],
-      "serviceType": ["Security Guarding", "Armed Response", "CCTV Installation", "Alarm Systems", "Cleaning Services", "Portable Toilet Hire"],
       "openingHours": "Mo-Su 00:00-23:59",
-      "priceRange": "$$"
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Security & Cleaning Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Security Guarding", "description": "PSIRA-registered static and patrol security guards"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Armed Response", "description": "24/7 armed response services"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "CCTV Installation", "description": "Professional CCTV and alarm system installation"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cleaning Services", "description": "Commercial and office cleaning"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Portable Toilet Hire", "description": "Toilet hire for events and construction sites"}}
+        ]
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Loeriesfontein", "containedInPlace": {"@type": "State", "name": "Northern Cape"}},
+        {"@type": "City", "name": "Carnarvon", "containedInPlace": {"@type": "State", "name": "Northern Cape"}},
+        {"@type": "City", "name": "Calvinia", "containedInPlace": {"@type": "State", "name": "Northern Cape"}},
+        {"@type": "City", "name": "Kimberley", "containedInPlace": {"@type": "State", "name": "Northern Cape"}},
+        {"@type": "City", "name": "Upington", "containedInPlace": {"@type": "State", "name": "Northern Cape"}},
+        {"@type": "City", "name": "Springbok", "containedInPlace": {"@type": "State", "name": "Northern Cape"}},
+        {"@type": "City", "name": "Cape Town", "containedInPlace": {"@type": "State", "name": "Western Cape"}},
+        {"@type": "City", "name": "Stellenbosch", "containedInPlace": {"@type": "State", "name": "Western Cape"}},
+        {"@type": "City", "name": "George", "containedInPlace": {"@type": "State", "name": "Western Cape"}}
+      ]
     }
     </script>
 
@@ -114,34 +106,22 @@
         {
           "@type": "Question",
           "name": "Do you provide security services in Loeriesfontein?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, JR Security & Cleaning Services is based in Loeriesfontein, Northern Cape, and provides security guarding, armed response, CCTV installation, and cleaning services throughout the Hantam region and surrounding areas."
-          }
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes, JR Security & Cleaning Services is based in Loeriesfontein, Northern Cape, and provides security guarding, armed response, CCTV installation, and cleaning services throughout the Hantam region and surrounding areas."}
         },
         {
           "@type": "Question",
           "name": "What areas do you serve in South Africa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We are based in Loeriesfontein, Northern Cape and serve the broader Northern Cape (Carnarvon, Calvinia, Kimberley, Upington, Springbok) and Western Cape (Cape Town, Stellenbosch, George) provinces."
-          }
+          "acceptedAnswer": {"@type": "Answer", "text": "We are based in Loeriesfontein, Northern Cape and serve the broader Northern Cape (Carnarvon, Calvinia, Kimberley, Upington, Springbok) and Western Cape (Cape Town, Stellenbosch, George) provinces."}
         },
         {
           "@type": "Question",
           "name": "Are your security guards PSIRA registered?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, all our security guards are fully PSIRA (Private Security Industry Regulatory Authority) registered and compliant with South African security industry standards."
-          }
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes, all our security guards are fully PSIRA (Private Security Industry Regulatory Authority) registered and compliant with South African security industry standards."}
         },
         {
           "@type": "Question",
           "name": "Do you offer 24/7 armed response?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we provide 24/7 armed response services across Northern Cape and Western Cape. Our emergency line is always available at 087 822 2981."
-          }
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes, we provide 24/7 armed response services across Northern Cape and Western Cape. Our emergency line is always available at 087 822 2981."}
         }
       ]
     }
@@ -168,8 +148,23 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--accent-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0 0 8px 8px;
+            font-weight: 600;
+            z-index: 9999;
+            transition: top 0.2s;
+            text-decoration: none;
+        }
+        .skip-link:focus { top: 0; }
 
         body {
             font-family: var(--font-body);
@@ -195,9 +190,7 @@
             font-weight: 600;
             font-family: var(--font-body);
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1002;
             height: var(--emergency-height);
             display: flex;
@@ -211,28 +204,15 @@
             opacity: 0;
             pointer-events: none;
         }
-        .emergency-bar a {
-            color: #fff;
-            text-decoration: underline;
-            font-weight: 700;
-        }
+        .emergency-bar a { color: #fff; text-decoration: underline; font-weight: 700; }
         .emergency-bar .bar-close {
-            position: absolute;
-            right: 1rem;
-            background: none;
-            border: none;
-            color: rgba(255,255,255,0.75);
-            cursor: pointer;
-            font-size: 1.1rem;
-            line-height: 1;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
+            position: absolute; right: 1rem;
+            background: none; border: none; color: rgba(255,255,255,0.75);
+            cursor: pointer; font-size: 1.1rem; line-height: 1;
+            padding: 0.2rem 0.4rem; border-radius: 4px;
             transition: color 0.2s, background 0.2s;
         }
-        .emergency-bar .bar-close:hover {
-            color: #fff;
-            background: rgba(255,255,255,0.15);
-        }
+        .emergency-bar .bar-close:hover { color: #fff; background: rgba(255,255,255,0.15); }
 
         /* ── Header ── */
         header {
@@ -251,63 +231,39 @@
         header.scrolled { box-shadow: 0 8px 32px rgba(0,0,0,0.6); }
 
         .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
+            max-width: 1400px; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; justify-content: space-between; align-items: center; height: 100%;
         }
 
         .logo { display: flex; align-items: center; text-decoration: none; }
         .logo-img {
-            height: 48px;
-            width: auto;
-            max-width: 180px;
-            object-fit: contain;
-            filter: brightness(1.15) contrast(1.1);
+            height: 48px; width: auto; max-width: 180px;
+            object-fit: contain; filter: brightness(1.15) contrast(1.1);
         }
 
         .header-actions { display: flex; gap: 0.75rem; align-items: center; }
 
         .btn-header {
-            padding: 0.55rem 1.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            font-family: var(--font-body);
-            transition: all 0.25s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
+            padding: 0.55rem 1.2rem; border-radius: 50px; text-decoration: none;
+            font-weight: 600; font-size: 0.85rem; font-family: var(--font-body);
+            transition: all 0.25s ease; display: flex; align-items: center; gap: 0.45rem;
             white-space: nowrap;
         }
-        .btn-call {
-            background: transparent;
-            border: 1.5px solid var(--accent-blue);
-            color: var(--accent-blue);
-        }
+        .btn-call { background: transparent; border: 1.5px solid var(--accent-blue); color: var(--accent-blue); }
         .btn-call:hover { background: var(--accent-blue); color: white; transform: translateY(-2px); }
         .btn-whatsapp-header { background: #25d366; color: white; border: 1.5px solid #25d366; }
         .btn-whatsapp-header:hover { background: #128c7e; border-color: #128c7e; transform: translateY(-2px); }
 
         .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            padding: 0.5rem;
+            display: none; background: none; border: none; color: white;
+            cursor: pointer; padding: 0.5rem;
         }
 
         /* ── Mobile Menu ── */
         .mobile-menu {
             position: fixed; top: 0; right: -100%;
             width: 80%; max-width: 300px; height: 100vh;
-            background: var(--secondary-dark);
-            z-index: 1004;
+            background: var(--secondary-dark); z-index: 1004;
             transition: right 0.3s ease;
             padding: 6rem 2rem 2rem;
             border-left: 1px solid rgba(255,255,255,0.07);
@@ -327,8 +283,7 @@
         .mobile-nav-links a {
             color: var(--text-primary); text-decoration: none; font-size: 1.1rem;
             font-weight: 600; display: block; padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-            transition: color 0.2s;
+            border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s;
         }
         .mobile-nav-links a:hover { color: var(--accent-blue); }
         .mobile-contact-btns { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
@@ -351,10 +306,7 @@
             z-index: -1;
         }
         .hero-content {
-            text-align: center;
-            padding: 0 1.5rem;
-            max-width: 960px;
-            z-index: 1;
+            text-align: center; padding: 0 1.5rem; max-width: 960px; z-index: 1;
             animation: fadeInUp 0.9s ease-out both;
         }
         @keyframes fadeInUp {
@@ -362,97 +314,53 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
             padding: 0.45rem 1rem;
             background: rgba(30, 111, 255, 0.12);
             border: 1px solid rgba(30, 111, 255, 0.5);
-            color: #7fb3ff;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            color: #7fb3ff; border-radius: 50px;
+            font-size: 0.8rem; font-weight: 600;
+            margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1.5px;
         }
         .hero h1 {
             font-family: var(--font-display);
             font-size: clamp(2.4rem, 6vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            margin-bottom: 1.25rem;
-            color: #fff;
-            letter-spacing: 0.5px;
+            font-weight: 800; line-height: 1.05;
+            margin-bottom: 1.25rem; color: #fff; letter-spacing: 0.5px;
         }
         .hero h1 span { color: var(--accent-blue); }
         .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 580px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary);
+            margin-bottom: 2.5rem; max-width: 580px; margin-left: auto; margin-right: auto;
         }
         .hero-location-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--accent-gold);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent-gold); font-size: 0.85rem; font-weight: 600;
+            margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px;
         }
         .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
         .btn-primary {
-            padding: 1rem 2rem;
-            background: var(--accent-blue);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            font-family: var(--font-body);
-            transition: all 0.3s ease;
+            padding: 1rem 2rem; background: var(--accent-blue); color: white;
+            text-decoration: none; border-radius: 8px; font-weight: 700;
+            font-size: 1rem; font-family: var(--font-body); transition: all 0.3s ease;
             border: 2px solid var(--accent-blue);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
             box-shadow: 0 8px 24px rgba(30,111,255,0.35);
         }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 36px rgba(30,111,255,0.45);
-            background: #1450c8;
-        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(30,111,255,0.45); background: #1450c8; }
         .btn-secondary {
-            padding: 1rem 2rem;
-            background: transparent;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            font-family: var(--font-body);
-            transition: all 0.3s ease;
+            padding: 1rem 2rem; background: transparent; color: white;
+            text-decoration: none; border-radius: 8px; font-weight: 700;
+            font-size: 1rem; font-family: var(--font-body); transition: all 0.3s ease;
             border: 2px solid rgba(255,255,255,0.2);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
         }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(255,255,255,0.5);
-            transform: translateY(-3px);
-        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); transform: translateY(-3px); }
+
         .scroll-indicator {
             position: absolute; bottom: 2rem; left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2.2s infinite;
-            opacity: 0.5;
+            transform: translateX(-50%); animation: bounce 2.2s infinite; opacity: 0.5;
         }
         @keyframes bounce {
             0%,100% { transform: translateX(-50%) translateY(0); }
@@ -462,8 +370,7 @@
 
         /* ── Trust Bar ── */
         .trust-bar {
-            background: var(--secondary-dark);
-            padding: 1.75rem 1.5rem;
+            background: var(--secondary-dark); padding: 1.75rem 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.04);
             border-bottom: 1px solid rgba(255,255,255,0.04);
         }
@@ -481,101 +388,47 @@
         .container { max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 3.5rem; }
         .section-tag {
-            display: inline-block;
-            color: var(--accent-blue);
-            font-weight: 600;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            margin-bottom: 0.75rem;
+            display: inline-block; color: var(--accent-blue); font-weight: 600;
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 0.75rem;
         }
         .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            letter-spacing: 0.3px;
+            font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800; margin-bottom: 1rem; color: var(--text-primary); letter-spacing: 0.3px;
         }
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            max-width: 560px;
-            margin: 0 auto;
-        }
+        .section-subtitle { color: var(--text-secondary); font-size: 1.05rem; max-width: 560px; margin: 0 auto; }
 
-        /* ── Stats Section (replaces testimonials) ── */
+        /* ── Stats Section ── */
         .stats-section { background: var(--light-bg); }
         .stats-section .section-title { color: var(--light-text); }
         .stats-section .section-tag { color: var(--accent-blue); }
         .stats-section .section-subtitle { color: #5a6a7e; }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
         .stat-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            background: white; border-radius: 16px; padding: 2.5rem 2rem;
+            text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.07);
             border: 1px solid rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
         .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
             background: linear-gradient(90deg, var(--accent-blue), var(--accent-gold));
         }
-        .stat-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 36px rgba(0,0,0,0.12);
-        }
-        .stat-number {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--accent-blue);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
+        .stat-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+        .stat-number { font-family: var(--font-display); font-size: 3.5rem; font-weight: 800; color: var(--accent-blue); line-height: 1; margin-bottom: 0.5rem; }
         .stat-number span { color: var(--accent-gold); }
-        .stat-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--light-text);
-            margin-bottom: 0.4rem;
-        }
-        .stat-sub {
-            font-size: 0.82rem;
-            color: #7a8a9a;
-        }
+        .stat-label { font-size: 1rem; font-weight: 600; color: var(--light-text); margin-bottom: 0.4rem; }
+        .stat-sub { font-size: 0.82rem; color: #7a8a9a; }
 
         /* ── Services ── */
         .services-overview { background: var(--primary-dark); }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 1.75rem;
-        }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.75rem; }
         .service-card {
-            background: var(--secondary-dark);
-            border-radius: 16px;
-            overflow: hidden;
+            background: var(--secondary-dark); border-radius: 16px; overflow: hidden;
             border: 1px solid rgba(255,255,255,0.04);
-            transition: all 0.35s ease;
-            position: relative;
+            transition: all 0.35s ease; position: relative;
         }
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(30,111,255,0.4);
-            box-shadow: 0 20px 44px rgba(0,0,0,0.5);
-        }
+        .service-card:hover { transform: translateY(-8px); border-color: rgba(30,111,255,0.4); box-shadow: 0 20px 44px rgba(0,0,0,0.5); }
         .service-badge {
             position: absolute; top: 1rem; right: 1rem;
             background: var(--accent-gold); color: #000;
@@ -583,170 +436,110 @@
             font-size: 0.72rem; font-weight: 700; z-index: 2;
             text-transform: uppercase; letter-spacing: 0.5px;
         }
+        /* Service image container with fallback */
+        .service-image-wrap {
+            width: 100%; height: 210px; overflow: hidden;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--charcoal) 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
         .service-image {
             width: 100%; height: 210px; object-fit: cover;
             transition: transform 0.5s ease;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--charcoal) 100%);
+            display: block;
         }
         .service-card:hover .service-image { transform: scale(1.04); }
+        .service-image-fallback {
+            font-size: 4rem; color: var(--text-secondary); display: none;
+        }
         .service-content { padding: 1.5rem; }
         .service-icon {
             width: 46px; height: 46px;
-            background: rgba(30,111,255,0.1);
-            border-radius: 10px;
+            background: rgba(30,111,255,0.1); border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 0.85rem;
-            font-size: 1.4rem;
+            margin-bottom: 0.85rem; font-size: 1.4rem;
         }
         .service-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 0.65rem;
-            color: var(--text-primary);
-            letter-spacing: 0.3px;
+            font-family: var(--font-display); font-size: 1.35rem; font-weight: 700;
+            margin-bottom: 0.65rem; color: var(--text-primary); letter-spacing: 0.3px;
         }
         .service-card p { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.25rem; line-height: 1.65; }
         .service-link {
             color: var(--accent-blue); text-decoration: none;
             font-weight: 600; font-size: 0.9rem;
-            display: inline-flex; align-items: center; gap: 0.4rem;
-            transition: gap 0.25s ease;
+            display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.25s ease;
         }
         .service-link:hover { gap: 0.65rem; }
 
         /* ── Services Breakdown ── */
         .services-breakdown {
-            background: var(--gradient-dark);
-            position: relative; overflow: hidden;
+            background: var(--gradient-dark); position: relative; overflow: hidden;
         }
         .services-breakdown::before {
-            content: '';
-            position: absolute; top: -40%; right: -15%;
+            content: ''; position: absolute; top: -40%; right: -15%;
             width: 500px; height: 500px;
             background: radial-gradient(circle, rgba(30,111,255,0.07) 0%, transparent 70%);
             pointer-events: none;
         }
-        .breakdown-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
+        .breakdown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
         .breakdown-column h3 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.75rem;
-            color: var(--text-primary);
-            display: flex; align-items: center; gap: 0.65rem;
-            letter-spacing: 0.3px;
+            font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;
+            margin-bottom: 1.75rem; color: var(--text-primary);
+            display: flex; align-items: center; gap: 0.65rem; letter-spacing: 0.3px;
         }
         .service-list { list-style: none; }
         .service-list li {
-            padding: 0.85rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
             display: flex; align-items: center; gap: 0.85rem;
-            color: var(--text-secondary);
-            transition: all 0.25s ease;
-            font-size: 0.95rem;
+            color: var(--text-secondary); transition: all 0.25s ease; font-size: 0.95rem;
         }
         .service-list li:hover { color: var(--text-primary); padding-left: 0.4rem; }
         .service-list li::before { content: '→'; color: var(--accent-blue); font-weight: bold; flex-shrink: 0; }
 
         /* ── Why Us ── */
         .why-us { background: var(--primary-dark); }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 1.75rem;
-        }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.75rem; }
         .feature-card {
-            background: rgba(13,21,32,0.7);
-            padding: 2rem;
-            border-radius: 14px;
-            border: 1px solid rgba(255,255,255,0.05);
-            text-align: center;
-            transition: all 0.3s ease;
+            background: rgba(13,21,32,0.7); padding: 2rem; border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.05); text-align: center; transition: all 0.3s ease;
         }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(30,111,255,0.35);
-            background: rgba(13,21,32,0.95);
-        }
+        .feature-card:hover { transform: translateY(-5px); border-color: rgba(30,111,255,0.35); background: rgba(13,21,32,0.95); }
         .feature-icon {
             width: 56px; height: 56px;
             background: linear-gradient(135deg, var(--accent-blue), #1450c8);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 1.25rem;
-            font-size: 1.4rem;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.25rem; font-size: 1.4rem;
             box-shadow: 0 8px 24px rgba(30,111,255,0.28);
         }
         .feature-card h4 {
-            font-family: var(--font-display);
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 0.6rem;
-            color: var(--text-primary);
-            letter-spacing: 0.2px;
+            font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
+            margin-bottom: 0.6rem; color: var(--text-primary); letter-spacing: 0.2px;
         }
         .feature-card p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; }
 
         /* ── Service Areas ── */
         .service-areas { background: var(--secondary-dark); }
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-            max-width: 860px;
-            margin: 0 auto;
-        }
+        .areas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; max-width: 860px; margin: 0 auto; }
         .area-card {
-            background: rgba(255,255,255,0.02);
-            border: 1.5px solid rgba(255,255,255,0.07);
-            border-radius: 18px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: all 0.35s ease;
-            position: relative;
-            overflow: hidden;
+            background: rgba(255,255,255,0.02); border: 1.5px solid rgba(255,255,255,0.07);
+            border-radius: 18px; padding: 2.5rem 2rem; text-align: center;
+            transition: all 0.35s ease; position: relative; overflow: hidden;
         }
         .area-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 4px;
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
             background: linear-gradient(90deg, var(--accent-blue), var(--accent-gold));
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+            transform: scaleX(0); transition: transform 0.4s ease;
         }
         .area-card:hover::before { transform: scaleX(1); }
-        .area-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(30,111,255,0.35);
-            background: rgba(255,255,255,0.04);
-        }
+        .area-card:hover { transform: translateY(-5px); border-color: rgba(30,111,255,0.35); background: rgba(255,255,255,0.04); }
         .area-icon { font-size: 2.75rem; margin-bottom: 0.85rem; }
-        .area-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
+        .area-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); }
         .area-card p { color: var(--text-secondary); font-size: 0.9rem; }
         .area-cities { margin-top: 0.85rem; font-size: 0.82rem; color: #7fb3ff; font-weight: 500; }
         .area-home-tag {
-            display: inline-block;
-            margin-top: 0.6rem;
-            background: rgba(240,165,0,0.12);
-            color: var(--accent-gold);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.2rem 0.6rem;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            display: inline-block; margin-top: 0.6rem;
+            background: rgba(240,165,0,0.12); color: var(--accent-gold);
+            font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem;
+            border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px;
         }
 
         /* ── FAQ ── */
@@ -755,30 +548,22 @@
         .faq-section .section-tag { color: var(--accent-blue); }
         .faq-container { max-width: 760px; margin: 0 auto; }
         .faq-item {
-            background: white;
-            border-radius: 12px;
-            margin-bottom: 0.85rem;
-            border: 1px solid rgba(0,0,0,0.05);
-            overflow: hidden;
+            background: white; border-radius: 12px; margin-bottom: 0.85rem;
+            border: 1px solid rgba(0,0,0,0.05); overflow: hidden;
         }
         .faq-question {
-            padding: 1.4rem 1.5rem;
-            cursor: pointer;
+            padding: 1.4rem 1.5rem; cursor: pointer; width: 100%; text-align: left;
             display: flex; justify-content: space-between; align-items: center;
-            font-weight: 600; font-size: 0.97rem;
-            color: var(--light-text);
+            font-weight: 600; font-size: 0.97rem; color: var(--light-text);
+            background: none; border: none; font-family: var(--font-body);
             transition: background 0.25s ease;
         }
         .faq-question:hover { background: rgba(30,111,255,0.04); }
         .faq-question svg { width: 18px; height: 18px; transition: transform 0.3s ease; color: var(--accent-blue); flex-shrink: 0; }
         .faq-item.active .faq-question svg { transform: rotate(180deg); }
         .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0; overflow: hidden;
-            transition: all 0.3s ease;
-            color: #5a6a7e;
-            font-size: 0.93rem;
-            line-height: 1.7;
+            padding: 0 1.5rem; max-height: 0; overflow: hidden;
+            transition: all 0.3s ease; color: #5a6a7e; font-size: 0.93rem; line-height: 1.7;
         }
         .faq-item.active .faq-answer { padding: 0 1.5rem 1.5rem; max-height: 220px; }
 
@@ -788,36 +573,27 @@
             position: relative; overflow: hidden; padding: 6rem 1.5rem;
         }
         .cta-section::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         .cta-content { position: relative; z-index: 1; text-align: center; max-width: 780px; margin: 0 auto; }
         .cta-content h2 {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 800;
-            margin-bottom: 1.25rem;
-            color: white;
-            letter-spacing: 0.3px;
+            font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800; margin-bottom: 1.25rem; color: white; letter-spacing: 0.3px;
         }
         .cta-content p { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: 2.5rem; }
         .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         .btn-gold {
-            background: var(--accent-gold); color: #000;
-            border: 2px solid var(--accent-gold);
-            padding: 1rem 2.5rem; border-radius: 8px;
-            font-weight: 700; font-family: var(--font-body);
+            background: var(--accent-gold); color: #000; border: 2px solid var(--accent-gold);
+            padding: 1rem 2.5rem; border-radius: 8px; font-weight: 700; font-family: var(--font-body);
             text-decoration: none; transition: all 0.3s ease;
             display: inline-flex; align-items: center; gap: 0.5rem;
             box-shadow: 0 8px 24px rgba(240,165,0,0.3);
         }
         .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(240,165,0,0.4); background: #d48f00; border-color: #d48f00; }
         .btn-white {
-            background: white; color: #0d1520;
-            border: 2px solid white;
-            padding: 1rem 2.5rem; border-radius: 8px;
-            font-weight: 700; font-family: var(--font-body);
+            background: white; color: #0d1520; border: 2px solid white;
+            padding: 1rem 2.5rem; border-radius: 8px; font-weight: 700; font-family: var(--font-body);
             text-decoration: none; transition: all 0.3s ease;
             display: inline-flex; align-items: center; gap: 0.5rem;
         }
@@ -827,28 +603,21 @@
         .contact-section { background: var(--primary-dark); }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
         .contact-info h3 {
-            font-family: var(--font-display);
-            font-size: 2rem; font-weight: 700;
-            margin-bottom: 1.25rem; color: var(--text-primary);
-            letter-spacing: 0.3px;
+            font-family: var(--font-display); font-size: 2rem; font-weight: 700;
+            margin-bottom: 1.25rem; color: var(--text-primary); letter-spacing: 0.3px;
         }
         .contact-info > p { color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.05rem; }
         .contact-methods { display: flex; flex-direction: column; gap: 1.25rem; }
         .contact-method {
-            display: flex; align-items: center; gap: 1rem;
-            padding: 1.25rem;
-            background: rgba(13,21,32,0.6);
-            border-radius: 12px;
+            display: flex; align-items: center; gap: 1rem; padding: 1.25rem;
+            background: rgba(13,21,32,0.6); border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.04);
-            transition: all 0.3s ease;
-            text-decoration: none; color: inherit;
+            transition: all 0.3s ease; text-decoration: none; color: inherit;
         }
         .contact-method:hover { border-color: rgba(30,111,255,0.4); transform: translateX(4px); background: rgba(13,21,32,0.9); }
         .contact-icon {
-            width: 46px; height: 46px;
-            background: rgba(30,111,255,0.1);
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
+            width: 46px; height: 46px; background: rgba(30,111,255,0.1);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
             font-size: 1.2rem; flex-shrink: 0;
         }
         .contact-details h4 { color: var(--text-primary); margin-bottom: 0.2rem; font-size: 0.95rem; font-weight: 600; }
@@ -856,115 +625,69 @@
 
         /* ── WhatsApp Form ── */
         .contact-form {
-            background: var(--secondary-dark);
-            padding: 2.5rem;
-            border-radius: 18px;
-            border: 1px solid rgba(255,255,255,0.05);
+            background: var(--secondary-dark); padding: 2.5rem;
+            border-radius: 18px; border: 1px solid rgba(255,255,255,0.05);
         }
         .contact-form .form-title {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.2px;
+            font-family: var(--font-display); font-size: 1.4rem; font-weight: 700;
+            color: var(--text-primary); margin-bottom: 0.5rem; letter-spacing: 0.2px;
         }
-        .contact-form .form-subtitle {
-            color: var(--text-secondary);
-            font-size: 0.88rem;
-            margin-bottom: 1.75rem;
-        }
+        .contact-form .form-subtitle { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.75rem; }
         .form-group { margin-bottom: 1.25rem; }
-        .form-group label {
-            display: block; margin-bottom: 0.4rem;
-            color: var(--text-primary); font-weight: 500; font-size: 0.88rem;
-        }
+        .form-group label { display: block; margin-bottom: 0.4rem; color: var(--text-primary); font-weight: 500; font-size: 0.88rem; }
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%; padding: 0.9rem 1rem;
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            transition: all 0.25s ease;
+            border-radius: 8px; color: var(--text-primary);
+            font-family: var(--font-body); font-size: 0.95rem; transition: all 0.25s ease;
         }
         .form-group select option { background: #0d1520; color: var(--text-primary); }
         .form-group input:focus,
         .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            background: rgba(30,111,255,0.05);
-        }
+        .form-group textarea:focus { outline: none; border-color: var(--accent-blue); background: rgba(30,111,255,0.05); }
+        .form-group input[aria-invalid="true"],
+        .form-group select[aria-invalid="true"] { border-color: #e53e3e; }
         .form-group textarea { resize: vertical; min-height: 110px; }
+        .field-error { color: #fc8181; font-size: 0.78rem; margin-top: 0.3rem; display: none; }
+        .form-group.has-error .field-error { display: block; }
         .btn-submit-wa {
-            width: 100%;
-            padding: 1rem;
-            background: #25d366;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            font-family: var(--font-body);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
+            width: 100%; padding: 1rem; background: #25d366; color: white;
+            border: none; border-radius: 8px; font-weight: 700; font-size: 1rem;
+            font-family: var(--font-body); cursor: pointer; transition: all 0.3s ease;
+            display: flex; align-items: center; justify-content: center; gap: 0.6rem;
             box-shadow: 0 6px 20px rgba(37,211,102,0.3);
         }
         .btn-submit-wa:hover { background: #128c7e; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,211,102,0.35); }
 
         /* ── Footer ── */
         footer {
-            background: #040710;
-            padding: 3rem 1.5rem;
-            text-align: center;
+            background: #040710; padding: 3rem 1.5rem; text-align: center;
             border-top: 1px solid rgba(255,255,255,0.04);
         }
         .footer-content { max-width: 1200px; margin: 0 auto; }
         .footer-logo { display: inline-block; margin-bottom: 1.25rem; }
         .footer-logo-img {
-            height: 56px; width: auto; max-width: 210px;
-            object-fit: contain;
-            filter: brightness(1.15) contrast(1.1);
-            opacity: 0.9; transition: opacity 0.3s;
+            height: 56px; width: auto; max-width: 210px; object-fit: contain;
+            filter: brightness(1.15) contrast(1.1); opacity: 0.9; transition: opacity 0.3s;
         }
         .footer-logo:hover .footer-logo-img { opacity: 1; }
         .footer-text { color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 1.25rem; }
-        .footer-location {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-        }
-        .footer-links {
-            display: flex; justify-content: center; gap: 2rem;
-            margin-bottom: 2rem; flex-wrap: wrap;
-        }
-        .footer-links a {
-            color: var(--text-secondary); text-decoration: none;
-            transition: color 0.2s; font-size: 0.875rem;
-        }
+        .footer-location { color: var(--accent-gold); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; font-size: 0.875rem; }
         .footer-links a:hover { color: var(--accent-blue); }
         .footer-bottom { color: var(--text-secondary); font-size: 0.82rem; opacity: 0.6; }
 
         /* ── Floating WhatsApp ── */
         .whatsapp-float {
             position: fixed; bottom: 20px; right: 20px;
-            background: #25d366; color: white;
-            width: 58px; height: 58px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.35);
-            z-index: 998; text-decoration: none;
-            transition: all 0.3s ease;
+            background: #25d366; color: white; width: 58px; height: 58px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.35); z-index: 998;
+            text-decoration: none; transition: all 0.3s ease;
             animation: pulseWA 2.5s infinite;
         }
         .whatsapp-float:hover { transform: scale(1.1); background: #128c7e; }
@@ -976,25 +699,13 @@
 
         /* ── Mobile Sticky Call Button ── */
         .mobile-call-sticky {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: var(--accent-blue);
-            color: white;
-            padding: 0 1.2rem;
-            height: 52px;
-            border-radius: 50px;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            font-family: var(--font-body);
-            box-shadow: 0 4px 18px rgba(30,111,255,0.45);
-            z-index: 997;
-            transition: all 0.3s ease;
-            white-space: nowrap;
+            display: none; position: fixed; bottom: 20px; left: 20px;
+            background: var(--accent-blue); color: white;
+            padding: 0 1.2rem; height: 52px; border-radius: 50px;
+            align-items: center; gap: 0.5rem; text-decoration: none;
+            font-weight: 700; font-size: 0.9rem; font-family: var(--font-body);
+            box-shadow: 0 4px 18px rgba(30,111,255,0.45); z-index: 997;
+            transition: all 0.3s ease; white-space: nowrap;
         }
         .mobile-call-sticky:hover { background: #1450c8; transform: translateY(-2px); }
         .mobile-call-sticky svg { width: 18px; height: 18px; flex-shrink: 0; }
@@ -1033,45 +744,54 @@
         @media (max-width: 400px) {
             .stats-grid { grid-template-columns: 1fr; }
         }
+
+        /* ── Reduced Motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Emergency Bar -->
-    <div class="emergency-bar" id="emergencyBar">
+    <div class="emergency-bar" id="emergencyBar" role="banner">
         <span>🚨 24/7 Emergency Line:&nbsp;<a href="tel:0878222981">087 822 2981</a>&nbsp;| Based in Loeriesfontein, Northern Cape</span>
-        <button class="bar-close" id="barClose" aria-label="Dismiss">✕</button>
+        <button class="bar-close" id="barClose" aria-label="Dismiss emergency bar">✕</button>
     </div>
 
     <!-- Header -->
     <header id="header">
         <div class="header-container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="JR Security & Cleaning Services Loeriesfontein" class="logo-img" width="180" height="48">
+            <a href="#" class="logo" aria-label="JR Security & Cleaning Services - Home">
+                <img src="logo.png" alt="JR Security & Cleaning Services Loeriesfontein" class="logo-img" width="180" height="48"
+                     onerror="this.alt='JR Security & Cleaning'; this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:var(--accent-blue);letter-spacing:1px;\'>JR SECURITY</span>'">
             </a>
-            <div class="header-actions">
-                <a href="tel:0878222981" class="btn-header btn-call">
-                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+            <div class="header-actions" role="navigation" aria-label="Header actions">
+                <a href="tel:0878222981" class="btn-header btn-call" aria-label="Call JR Security now">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
                     Call Now
                 </a>
-                <a href="https://wa.me/27781564244" class="btn-header btn-whatsapp-header" target="_blank" rel="noopener noreferrer">
-                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                <a href="https://wa.me/27781564244" class="btn-header btn-whatsapp-header" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp JR Security">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
                     WhatsApp
                 </a>
             </div>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
     </header>
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
-    <nav class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close menu">
-            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" aria-hidden="true">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close navigation menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
-        <ul class="mobile-nav-links">
+        <ul class="mobile-nav-links" role="list">
             <li><a href="#services" onclick="toggleMobileMenu()">Services</a></li>
             <li><a href="#why-us" onclick="toggleMobileMenu()">Why Choose Us</a></li>
             <li><a href="#areas" onclick="toggleMobileMenu()">Service Areas</a></li>
@@ -1080,78 +800,85 @@
         </ul>
         <div class="mobile-contact-btns">
             <a href="tel:0878222981" class="btn-header btn-call" style="width:100%;justify-content:center;">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
                 Call 087 822 2981
             </a>
             <a href="https://wa.me/27781564244" class="btn-header btn-whatsapp-header" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
                 WhatsApp Us
             </a>
         </div>
     </nav>
 
+    <!-- Main Content -->
+    <main id="main-content">
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-label="Hero">
         <div class="hero-video-container">
-            <video class="hero-video" autoplay muted loop playsinline poster="security-hero-northern-cape.jpg" preload="metadata">
+            <video class="hero-video" autoplay muted loop playsinline
+                   poster="security-hero-northern-cape.jpg"
+                   preload="metadata"
+                   aria-hidden="true">
+                <source src="video.webm" type="video/webm">
                 <source src="video.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="hero-overlay"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content">
-            <div class="hero-badge">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0z"/></svg>
+            <div class="hero-badge" role="img" aria-label="PSIRA Registered badge">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0z"/></svg>
                 PSIRA Registered
             </div>
             <div class="hero-location-tag">
-                📍 Based in Loeriesfontein, Northern Cape
+                <span aria-hidden="true">📍</span> Based in Loeriesfontein, Northern Cape
             </div>
             <h1>Professional <span>Security</span> &<br>Cleaning Services</h1>
             <p class="hero-subtitle">PSIRA-registered security guarding, armed response, CCTV installation, and commercial cleaning. Protecting properties across Northern &amp; Western Cape.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn-primary">
                     Get Free Quote
-                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
-                <a href="https://wa.me/27781564244" class="btn-secondary" target="_blank" rel="noopener noreferrer">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                <a href="https://wa.me/27781564244" class="btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp JR Security">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
                     WhatsApp Us
                 </a>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" aria-hidden="true">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
         </div>
     </section>
 
     <!-- Trust Bar -->
-    <div class="trust-bar">
+    <div class="trust-bar" role="complementary" aria-label="Trust indicators">
         <div class="trust-container">
             <div class="trust-item">
-                <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
                 <span><strong>PSIRA Registered</strong> & Compliant</span>
             </div>
             <div class="trust-item">
-                <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
                 <span><strong>24/7</strong> Armed Response</span>
             </div>
             <div class="trust-item">
-                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 <span><strong>Trusted</strong> by 500+ Clients</span>
             </div>
             <div class="trust-item">
-                <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
                 <span><strong>Loeriesfontein</strong> & Beyond</span>
             </div>
         </div>
     </div>
 
-    <!-- Stats Section (replaces testimonials) -->
-    <section class="stats-section">
+    <!-- Stats Section -->
+    <section class="stats-section" aria-labelledby="stats-heading">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">By the numbers</span>
-                <h2 class="section-title">Proven Protection, Real Results</h2>
+                <h2 class="section-title" id="stats-heading">Proven Protection, Real Results</h2>
                 <p class="section-subtitle">Trusted by homes and businesses across Loeriesfontein and throughout the Northern &amp; Western Cape</p>
             </div>
             <div class="stats-grid">
@@ -1180,66 +907,115 @@
     </section>
 
     <!-- Services Overview -->
-    <section class="services-overview" id="services">
+    <section class="services-overview" id="services" aria-labelledby="services-heading">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">Our Services</span>
-                <h2 class="section-title">Comprehensive Security & Cleaning Solutions</h2>
+                <h2 class="section-title" id="services-heading">Comprehensive Security & Cleaning Solutions</h2>
                 <p class="section-subtitle">From armed response to commercial cleaning — end-to-end services for Loeriesfontein and across South Africa</p>
             </div>
             <div class="services-grid">
-                <div class="service-card fade-in">
+
+                <!-- Security Guarding Card -->
+                <article class="service-card fade-in">
                     <span class="service-badge">Most Popular</span>
-                    <img src="security-guarding-northern-cape.jpg" alt="PSIRA-registered security guards in Loeriesfontein and Northern Cape" class="service-image" loading="lazy" width="400" height="210">
+                    <div class="service-image-wrap">
+                        <picture>
+                            <source srcset="security-guarding-northern-cape.webp" type="image/webp">
+                            <source srcset="security-guarding-northern-cape.jpg" type="image/jpeg">
+                            <img src="security-guarding-northern-cape.jpg"
+                                 alt="PSIRA-registered security guards in Loeriesfontein and Northern Cape"
+                                 class="service-image" loading="lazy" width="400" height="210"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        </picture>
+                        <div class="service-image-fallback" aria-hidden="true">🛡️</div>
+                    </div>
                     <div class="service-content">
-                        <div class="service-icon">🛡️</div>
+                        <div class="service-icon" aria-hidden="true">🛡️</div>
                         <h3>Security Guarding</h3>
                         <p>PSIRA-registered security guards for residential, commercial, farm, and industrial properties in Loeriesfontein, Carnarvon, Calvinia, and surrounding areas. Static and patrol options available.</p>
                         <a href="#contact" class="service-link">Get Free Quote →</a>
                     </div>
-                </div>
-                <div class="service-card fade-in">
-                    <img src="cctv-alarm-systems-south-africa.jpg" alt="CCTV and alarm system installation in Northern Cape" class="service-image" loading="lazy" width="400" height="210">
+                </article>
+
+                <!-- CCTV Card -->
+                <article class="service-card fade-in">
+                    <div class="service-image-wrap">
+                        <picture>
+                            <source srcset="cctv-alarm-systems-south-africa.webp" type="image/webp">
+                            <source srcset="cctv-alarm-systems-south-africa.jpg" type="image/jpeg">
+                            <img src="cctv-alarm-systems-south-africa.jpg"
+                                 alt="CCTV and alarm system installation in Northern Cape"
+                                 class="service-image" loading="lazy" width="400" height="210"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        </picture>
+                        <div class="service-image-fallback" aria-hidden="true">📹</div>
+                    </div>
                     <div class="service-content">
-                        <div class="service-icon">📹</div>
+                        <div class="service-icon" aria-hidden="true">📹</div>
                         <h3>CCTV & Alarm Systems</h3>
                         <p>Professional surveillance systems and alarm installations with remote monitoring. Protect your property with the latest technology, installed and maintained by our certified technicians.</p>
                         <a href="#contact" class="service-link">Learn More →</a>
                     </div>
-                </div>
-                <div class="service-card fade-in">
-                    <img src="clean.jpg" alt="Professional commercial cleaning services Northern Cape" class="service-image" loading="lazy" width="400" height="210">
+                </article>
+
+                <!-- Cleaning Card — bulletproof image with onerror fallback -->
+                <article class="service-card fade-in">
+                    <div class="service-image-wrap">
+                        <picture>
+                            <source srcset="clean.webp" type="image/webp">
+                            <source srcset="clean.jpg" type="image/jpeg">
+                            <img src="clean.jpg"
+                                 alt="Professional commercial cleaning services in Northern Cape"
+                                 class="service-image" loading="lazy" width="400" height="210"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        </picture>
+                        <div class="service-image-fallback" aria-hidden="true">✨</div>
+                    </div>
                     <div class="service-content">
-                        <div class="service-icon">✨</div>
+                        <div class="service-icon" aria-hidden="true">✨</div>
                         <h3>Cleaning Services</h3>
                         <p>Professional commercial and office cleaning across Northern and Western Cape. Trained staff using eco-friendly products for consistent, spotless results — daily, weekly or once-off.</p>
                         <a href="#contact" class="service-link">Get Free Quote →</a>
                     </div>
-                </div>
-                <div class="service-card fade-in">
-                    <img src="portable-toilet-hire-events.jpg" alt="Portable toilet hire for events and construction sites Northern Cape" class="service-image" loading="lazy" width="400" height="210">
+                </article>
+
+                <!-- Toilet Hire Card -->
+                <article class="service-card fade-in">
+                    <div class="service-image-wrap">
+                        <picture>
+                            <source srcset="portable-toilet-hire-events.webp" type="image/webp">
+                            <source srcset="portable-toilet-hire-events.jpg" type="image/jpeg">
+                            <img src="portable-toilet-hire-events.jpg"
+                                 alt="Portable toilet hire for events and construction sites Northern Cape"
+                                 class="service-image" loading="lazy" width="400" height="210"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        </picture>
+                        <div class="service-image-fallback" aria-hidden="true">🚻</div>
+                    </div>
                     <div class="service-content">
-                        <div class="service-icon">🚻</div>
+                        <div class="service-icon" aria-hidden="true">🚻</div>
                         <h3>Toilet Hire</h3>
                         <p>Portable toilet hire for events, construction sites, and functions throughout South Africa. Clean, well-maintained units with regular servicing and flexible hire periods.</p>
                         <a href="#contact" class="service-link">Learn More →</a>
                     </div>
-                </div>
+                </article>
+
             </div>
         </div>
     </section>
 
     <!-- Full Services Breakdown -->
-    <section class="services-breakdown">
+    <section class="services-breakdown" aria-labelledby="breakdown-heading">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">Complete Solutions</span>
-                <h2 class="section-title">Everything You Need in One Place</h2>
+                <h2 class="section-title" id="breakdown-heading">Everything You Need in One Place</h2>
             </div>
             <div class="breakdown-grid">
                 <div class="breakdown-column fade-in">
                     <h3>🔒 Security Services</h3>
-                    <ul class="service-list">
+                    <ul class="service-list" role="list">
                         <li>Security Guarding (Static & Patrol)</li>
                         <li>Armed Response (24/7)</li>
                         <li>Access Control Systems</li>
@@ -1252,7 +1028,7 @@
                 </div>
                 <div class="breakdown-column fade-in">
                     <h3>🧹 Cleaning Services</h3>
-                    <ul class="service-list">
+                    <ul class="service-list" role="list">
                         <li>Office Cleaning (Daily/Weekly)</li>
                         <li>Commercial Deep Cleaning</li>
                         <li>Industrial Site Cleaning</li>
@@ -1268,35 +1044,35 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="why-us" id="why-us">
+    <section class="why-us" id="why-us" aria-labelledby="why-heading">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">Why JR Security</span>
-                <h2 class="section-title">The Trusted Choice in the Northern Cape</h2>
+                <h2 class="section-title" id="why-heading">The Trusted Choice in the Northern Cape</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">📋</div>
+                    <div class="feature-icon" aria-hidden="true">📋</div>
                     <h4>PSIRA Registered</h4>
                     <p>Fully compliant with Private Security Industry Regulatory Authority standards across all operations</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">🌾</div>
+                    <div class="feature-icon" aria-hidden="true">🌾</div>
                     <h4>Local Knowledge</h4>
                     <p>Based in Loeriesfontein — we understand the unique security challenges of farms, remote properties, and rural businesses in the Northern Cape</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon" aria-hidden="true">⚡</div>
                     <h4>Rapid Response</h4>
                     <p>24/7 armed response teams with a dedicated control room for fast, reliable deployment across our service areas</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">👥</div>
+                    <div class="feature-icon" aria-hidden="true">👥</div>
                     <h4>Vetted & Trained Staff</h4>
                     <p>Thoroughly background-checked, professionally trained, and continuously supervised security and cleaning personnel</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">💰</div>
+                    <div class="feature-icon" aria-hidden="true">💰</div>
                     <h4>Flexible & Affordable</h4>
                     <p>Scalable solutions for small offices, large farms, and everything in between — tailored to your budget and requirements</p>
                 </div>
@@ -1305,23 +1081,23 @@
     </section>
 
     <!-- Service Areas -->
-    <section class="service-areas" id="areas">
+    <section class="service-areas" id="areas" aria-labelledby="areas-heading">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">Coverage Area</span>
-                <h2 class="section-title">Serving Northern & Western Cape</h2>
+                <h2 class="section-title" id="areas-heading">Serving Northern & Western Cape</h2>
                 <p class="section-subtitle">Based in Loeriesfontein — delivering PSIRA-registered security and professional cleaning across two provinces</p>
             </div>
             <div class="areas-grid">
                 <div class="area-card fade-in">
-                    <div class="area-icon">🏜️</div>
+                    <div class="area-icon" aria-hidden="true">🏜️</div>
                     <h3>Northern Cape</h3>
                     <p>Security and cleaning services throughout the Northern Cape, including the Hantam region and Karoo</p>
                     <div class="area-cities">Loeriesfontein • Carnarvon • Calvinia • Kenhardt • Brandvlei • Upington • Kimberley • Springbok</div>
                     <span class="area-home-tag">🏠 Home Base</span>
                 </div>
                 <div class="area-card fade-in">
-                    <div class="area-icon">🌊</div>
+                    <div class="area-icon" aria-hidden="true">🌊</div>
                     <h3>Western Cape</h3>
                     <p>Comprehensive security and cleaning services across the Western Cape province</p>
                     <div class="area-cities">Cape Town • Stellenbosch • George • Paarl • Mossel Bay • Ceres • Vredendal</div>
@@ -1331,74 +1107,80 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">FAQ</span>
-                <h2 class="section-title">Frequently Asked Questions</h2>
+                <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
             </div>
             <div class="faq-container">
-                <div class="faq-item fade-in">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+
+                <div class="faq-item fade-in" role="region" aria-labelledby="faq-q1">
+                    <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1" onclick="toggleFaq(this)">
                         <span>Do you provide security services in Loeriesfontein?</span>
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </div>
-                    <div class="faq-answer">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-a1" role="region">
                         Yes — Loeriesfontein is our home base. We provide security guarding, armed response, CCTV installation, and cleaning services throughout Loeriesfontein and the Hantam district, including Carnarvon, Calvinia, Brandvlei, and Kenhardt.
                     </div>
                 </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+
+                <div class="faq-item fade-in" role="region" aria-labelledby="faq-q2">
+                    <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2" onclick="toggleFaq(this)">
                         <span>What other areas do you serve in South Africa?</span>
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </div>
-                    <div class="faq-answer">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-a2" role="region">
                         We serve the broader Northern Cape (Kimberley, Upington, Springbok, De Aar, Kuruman) and Western Cape (Cape Town, Stellenbosch, George, Paarl, Mossel Bay). Contact us to confirm coverage in your specific area.
                     </div>
                 </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+
+                <div class="faq-item fade-in" role="region" aria-labelledby="faq-q3">
+                    <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3" onclick="toggleFaq(this)">
                         <span>Are your security guards PSIRA registered?</span>
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </div>
-                    <div class="faq-answer">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-a3" role="region">
                         Yes. All our security guards are fully PSIRA (Private Security Industry Regulatory Authority) registered and compliant with South African security industry standards. We maintain strict compliance with all regulations.
                     </div>
                 </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+
+                <div class="faq-item fade-in" role="region" aria-labelledby="faq-q4">
+                    <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4" onclick="toggleFaq(this)">
                         <span>Do you offer 24/7 armed response?</span>
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </div>
-                    <div class="faq-answer">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-a4" role="region">
                         Yes. Our emergency control room operates around the clock. Armed response teams are strategically positioned for rapid deployment. Emergency line: 087 822 2981 — available 24/7.
                     </div>
                 </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+
+                <div class="faq-item fade-in" role="region" aria-labelledby="faq-q5">
+                    <button class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5" onclick="toggleFaq(this)">
                         <span>How quickly can you start service?</span>
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </div>
-                    <div class="faq-answer">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-a5" role="region">
                         For security guarding and cleaning, we can typically begin within 24–48 hours. CCTV and alarm installations are quoted within 48 hours of your request. Contact us via WhatsApp for the fastest response.
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section" aria-labelledby="cta-heading">
         <div class="cta-content">
-            <h2>Ready to Secure Your Property?</h2>
+            <h2 id="cta-heading">Ready to Secure Your Property?</h2>
             <p>Get a free, no-obligation quote today. Our PSIRA-registered team based in Loeriesfontein is ready to protect your property across Northern and Western Cape.</p>
             <div class="cta-buttons">
-                <a href="tel:0878222981" class="btn-gold">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+                <a href="tel:0878222981" class="btn-gold" aria-label="Call JR Security on 087 822 2981">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
                     Call 087 822 2981
                 </a>
-                <a href="https://wa.me/27781564244" class="btn-white" target="_blank" rel="noopener noreferrer">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                <a href="https://wa.me/27781564244" class="btn-white" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp JR Security now">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
                     WhatsApp Now
                 </a>
             </div>
@@ -1406,76 +1188,93 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">Get In Touch</span>
-                <h2 class="section-title">Request Your Free Quote</h2>
+                <h2 class="section-title" id="contact-heading">Request Your Free Quote</h2>
                 <p class="section-subtitle">Fill in the form and we'll reply on WhatsApp — usually within the hour</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info fade-in">
                     <h3>Contact Us</h3>
                     <p>Reach us directly or fill out the form — your message goes straight to our WhatsApp so we can respond fast.</p>
+                    <address style="font-style: normal;">
                     <div class="contact-methods">
                         <a href="tel:0878222981" class="contact-method">
-                            <div class="contact-icon">📞</div>
+                            <div class="contact-icon" aria-hidden="true">📞</div>
                             <div class="contact-details">
                                 <h4>Phone (24/7 Emergency)</h4>
                                 <p>087 822 2981</p>
                             </div>
                         </a>
-                        <a href="https://wa.me/27781564244" class="contact-method" target="_blank" rel="noopener noreferrer">
-                            <div class="contact-icon" style="background:rgba(37,211,102,0.1);color:#25d366;">💬</div>
+                        <a href="https://wa.me/27781564244" class="contact-method" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 078 156 4244">
+                            <div class="contact-icon" style="background:rgba(37,211,102,0.1);" aria-hidden="true">💬</div>
                             <div class="contact-details">
                                 <h4>WhatsApp</h4>
                                 <p>078 156 4244</p>
                             </div>
                         </a>
                         <a href="mailto:jr.retailenterprises@outlook.com" class="contact-method">
-                            <div class="contact-icon">✉️</div>
+                            <div class="contact-icon" aria-hidden="true">✉️</div>
                             <div class="contact-details">
                                 <h4>Email</h4>
                                 <p>jr.retailenterprises@outlook.com</p>
                             </div>
                         </a>
                         <div class="contact-method" style="cursor:default;">
-                            <div class="contact-icon">📍</div>
+                            <div class="contact-icon" aria-hidden="true">📍</div>
                             <div class="contact-details">
                                 <h4>Based In</h4>
                                 <p>Loeriesfontein, Northern Cape, South Africa</p>
                             </div>
                         </div>
                     </div>
+                    </address>
                 </div>
 
                 <div class="contact-form fade-in">
                     <p class="form-title">Get a Free Quote</p>
                     <p class="form-subtitle">Your message will open directly in WhatsApp — quick and easy.</p>
-                    <form id="quoteForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Smith">
+                    <form id="quoteForm" novalidate aria-label="Request a free quote">
+                        <div class="form-group" id="fg-name">
+                            <label for="name">Full Name <span aria-hidden="true">*</span></label>
+                            <input type="text" id="name" name="name" required
+                                   placeholder="John Smith"
+                                   autocomplete="name"
+                                   aria-required="true"
+                                   aria-describedby="name-error">
+                            <span class="field-error" id="name-error" role="alert">Please enter your full name.</span>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="082 000 0000">
+                        <div class="form-group" id="fg-phone">
+                            <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+                            <input type="tel" id="phone" name="phone" required
+                                   placeholder="082 000 0000"
+                                   autocomplete="tel"
+                                   aria-required="true"
+                                   aria-describedby="phone-error">
+                            <span class="field-error" id="phone-error" role="alert">Please enter your phone number.</span>
                         </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed *</label>
-                            <select id="service" name="service" required>
+                        <div class="form-group" id="fg-service">
+                            <label for="service">Service Needed <span aria-hidden="true">*</span></label>
+                            <select id="service" name="service" required
+                                    aria-required="true"
+                                    aria-describedby="service-error">
                                 <option value="">Select a service...</option>
                                 <option value="Security Guarding">Security Guarding</option>
                                 <option value="Armed Response">Armed Response</option>
-                                <option value="CCTV & Alarm Systems">CCTV & Alarm Systems</option>
+                                <option value="CCTV & Alarm Systems">CCTV &amp; Alarm Systems</option>
                                 <option value="Cleaning Services">Cleaning Services</option>
                                 <option value="Toilet Hire">Toilet Hire</option>
                                 <option value="Multiple Services">Multiple Services</option>
                             </select>
+                            <span class="field-error" id="service-error" role="alert">Please select a service.</span>
                         </div>
-                        <div class="form-group">
-                            <label for="location">Your Location *</label>
-                            <select id="location" name="location" required>
+                        <div class="form-group" id="fg-location">
+                            <label for="location">Your Location <span aria-hidden="true">*</span></label>
+                            <select id="location" name="location" required
+                                    aria-required="true"
+                                    aria-describedby="location-error">
                                 <option value="">Select your area...</option>
                                 <option value="Loeriesfontein, Northern Cape">Loeriesfontein</option>
                                 <option value="Carnarvon, Northern Cape">Carnarvon</option>
@@ -1490,13 +1289,17 @@
                                 <option value="George, Western Cape">George</option>
                                 <option value="Other">Other (mention in message)</option>
                             </select>
+                            <span class="field-error" id="location-error" role="alert">Please select your location.</span>
                         </div>
                         <div class="form-group">
                             <label for="message">Tell us about your needs</label>
-                            <textarea id="message" name="message" placeholder="Describe your requirements — property type, size, specific concerns..."></textarea>
+                            <textarea id="message" name="message"
+                                      placeholder="Describe your requirements — property type, size, specific concerns..."
+                                      aria-describedby="message-hint"></textarea>
+                            <span id="message-hint" style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.25rem;display:block;">Optional — more detail helps us give a better quote</span>
                         </div>
                         <button type="submit" class="btn-submit-wa">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
                             Send via WhatsApp
                         </button>
                     </form>
@@ -1505,21 +1308,24 @@
         </div>
     </section>
 
+    </main><!-- end #main-content -->
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <a href="#" class="footer-logo">
-                <img src="logo.png" alt="JR Security & Cleaning Services Loeriesfontein" class="footer-logo-img" width="210" height="56">
+            <a href="#" class="footer-logo" aria-label="JR Security & Cleaning Services - back to top">
+                <img src="logo.png" alt="JR Security & Cleaning Services" class="footer-logo-img" width="210" height="56"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--accent-blue);\'>JR SECURITY</span>'">
             </a>
             <p class="footer-text">PSIRA-Registered Security & Professional Cleaning Services</p>
             <p class="footer-location">📍 Based in Loeriesfontein, Northern Cape, South Africa</p>
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Footer navigation">
                 <a href="#services">Services</a>
                 <a href="#areas">Coverage</a>
                 <a href="#contact">Contact</a>
                 <a href="tel:0878222981">Emergency: 087 822 2981</a>
                 <a href="https://wa.me/27781564244" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            </div>
+            </nav>
             <div class="footer-bottom">
                 © 2026 JR Security & Cleaning Services. All rights reserved. PSIRA Registered. Loeriesfontein, Northern Cape, South Africa.
             </div>
@@ -1527,18 +1333,18 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/27781564244" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-        <svg width="28" height="28" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+    <a href="https://wa.me/27781564244" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with JR Security on WhatsApp">
+        <svg width="28" height="28" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.476.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
     </a>
 
     <!-- Mobile Sticky Call Button -->
-    <a href="tel:0878222981" class="mobile-call-sticky" aria-label="Call us now">
-        <svg fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+    <a href="tel:0878222981" class="mobile-call-sticky" aria-label="Call JR Security now">
+        <svg fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
         Call Now
     </a>
 
     <script>
-        // ── Emergency Bar: dismiss permanently for this session ──
+        // ── Emergency Bar ──
         const emergencyBar = document.getElementById('emergencyBar');
         const barClose = document.getElementById('barClose');
         const header = document.getElementById('header');
@@ -1559,7 +1365,6 @@
 
         barClose.addEventListener('click', dismissBar);
 
-        // Hide bar after scrolling 280px (only if not already dismissed)
         let scrollBarHidden = false;
         window.addEventListener('scroll', () => {
             if (!barDismissed && !scrollBarHidden && window.scrollY > 280) {
@@ -1577,45 +1382,117 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const overlay = document.getElementById('mobileOverlay');
-            menu.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+            const btn = document.getElementById('mobileMenuBtn');
+            const isOpen = menu.classList.toggle('active');
+            overlay.classList.toggle('active', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
         }
+
         window.addEventListener('resize', () => {
             if (window.innerWidth > 968) {
-                document.getElementById('mobileMenu').classList.remove('active');
-                document.getElementById('mobileOverlay').classList.remove('active');
+                const menu = document.getElementById('mobileMenu');
+                const overlay = document.getElementById('mobileOverlay');
+                const btn = document.getElementById('mobileMenuBtn');
+                menu.classList.remove('active');
+                overlay.classList.remove('active');
+                menu.setAttribute('aria-hidden', 'true');
+                btn.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             }
         });
 
-        // ── Fade-in on scroll ──
+        // ── Escape key closes mobile menu ──
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const menu = document.getElementById('mobileMenu');
+                if (menu.classList.contains('active')) toggleMobileMenu();
+            }
+        });
+
+        // ── Staggered Fade-in on scroll ──
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, (entry.target.dataset.delay || 0) * 1);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        // Apply stagger delays to grid children
+        document.querySelectorAll('.services-grid .fade-in, .stats-grid .fade-in, .features-grid .fade-in').forEach((el, i) => {
+            el.dataset.delay = i * 100;
+            el.style.transitionDelay = `${i * 80}ms`;
+        });
+
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // ── FAQ toggle ──
-        function toggleFaq(el) {
-            const item = el.parentElement;
+        // ── FAQ toggle (accessible) ──
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
             const wasActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            if (!wasActive) item.classList.add('active');
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            if (!wasActive) {
+                item.classList.add('active');
+                btn.setAttribute('aria-expanded', 'true');
+            }
         }
+
+        // ── Input sanitization ──
+        function sanitizeInput(str) {
+            if (!str) return '';
+            return str.replace(/[<>"'&]/g, (c) => ({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','&':'&amp;'}[c]));
+        }
+
+        // ── Form validation helpers ──
+        function showError(fieldGroupId, inputId) {
+            document.getElementById(fieldGroupId).classList.add('has-error');
+            document.getElementById(inputId).setAttribute('aria-invalid', 'true');
+        }
+        function clearError(fieldGroupId, inputId) {
+            document.getElementById(fieldGroupId).classList.remove('has-error');
+            document.getElementById(inputId).removeAttribute('aria-invalid');
+        }
+
+        // Clear errors on input
+        ['name','phone','service','location'].forEach(id => {
+            document.getElementById(id).addEventListener('input', () => clearError(`fg-${id}`, id));
+            document.getElementById(id).addEventListener('change', () => clearError(`fg-${id}`, id));
+        });
 
         // ── WhatsApp form submission ──
         document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name     = document.getElementById('name').value.trim();
-            const phone    = document.getElementById('phone').value.trim();
-            const service  = document.getElementById('service').value;
-            const location = document.getElementById('location').value;
-            const message  = document.getElementById('message').value.trim();
+            const nameVal     = document.getElementById('name').value.trim();
+            const phoneVal    = document.getElementById('phone').value.trim();
+            const serviceVal  = document.getElementById('service').value;
+            const locationVal = document.getElementById('location').value;
+            const messageVal  = document.getElementById('message').value.trim();
 
-            if (!name || !phone || !service || !location) {
-                alert('Please fill in all required fields.');
+            let valid = true;
+            if (!nameVal)     { showError('fg-name', 'name'); valid = false; }
+            if (!phoneVal)    { showError('fg-phone', 'phone'); valid = false; }
+            if (!serviceVal)  { showError('fg-service', 'service'); valid = false; }
+            if (!locationVal) { showError('fg-location', 'location'); valid = false; }
+
+            if (!valid) {
+                document.querySelector('.has-error input, .has-error select')?.focus();
                 return;
             }
+
+            // Sanitize all inputs before sending
+            const name     = sanitizeInput(nameVal);
+            const phone    = sanitizeInput(phoneVal);
+            const service  = sanitizeInput(serviceVal);
+            const location = sanitizeInput(locationVal);
+            const message  = sanitizeInput(messageVal);
 
             const text = `Hi JR Security! I'd like to request a free quote.\n\n` +
                          `👤 *Name:* ${name}\n` +
@@ -1624,13 +1501,42 @@
                          `📍 *Location:* ${location}` +
                          (message ? `\n💬 *Details:* ${message}` : '');
 
+            // Track WhatsApp conversion (Google Analytics / gtag if available)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'form',
+                    'event_label': service,
+                    'value': 1
+                });
+            }
+
             window.open(`https://wa.me/27781564244?text=${encodeURIComponent(text)}`, '_blank');
+        });
+
+        // ── Track WhatsApp link clicks ──
+        document.querySelectorAll('a[href^="https://wa.me"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', { 'event_category': 'engagement', 'event_label': 'whatsapp_click' });
+                }
+            });
+        });
+
+        // ── Track phone clicks ──
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', { 'event_category': 'engagement', 'event_label': 'phone_click' });
+                }
+            });
         });
 
         // ── Smooth scroll ──
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
                     window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
@@ -1638,9 +1544,17 @@
             });
         });
 
-        // ── Video speed ──
+        // ── Video playback rate ──
         const video = document.querySelector('.hero-video');
-        if (video) video.playbackRate = 0.7;
+        if (video) {
+            video.playbackRate = 0.7;
+            // Pause video if user prefers reduced motion
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                video.pause();
+                video.removeAttribute('autoplay');
+            }
+        }
     </script>
+
 </body>
 </html>
